@@ -89,8 +89,8 @@ internal class TVButtonAnimation {
                 tvButton.specularView.alpha = specularAlpha
                 tvButton.specularView.center = point
                 for i in 1 ..< tvButton.containerView.subviews.count {
-                    let adjusted = i/2
-                    let scale = 1 + maxScaleDelta*CGFloat(adjusted/tvButton.containerView.subviews.count)
+                    let adjusted = Float(i)/Float(2)
+                    let scale = 1 + maxScaleDelta*CGFloat(adjusted/Float(tvButton.containerView.subviews.count))
                     let subview = tvButton.containerView.subviews[i]
                     if subview != tvButton.specularView {
                       subview.contentMode = UIView.ContentMode.redraw
